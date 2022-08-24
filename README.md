@@ -11,7 +11,7 @@ Add the following to your project level build.gradle:
 
 Add this to your app build.gradle:
 
-     compile 'com.github.pramodkr123:ConvertWebViewToPdfDemo:1.0.4'
+        implementation 'com.github.thefaisalurrehman:Webview-to-pdf:Tag'
 
 Permission in Manifest
 
@@ -77,19 +77,21 @@ Sample code :
                     fileChooser(context,it)
                 }
             }
-                private fun fileChooser(context: Context, path: String) {
-    val file = File(path)
-    val target = Intent("android.intent.action.VIEW")
-    val uri = FileProvider.getUriForFile(context, "com.package.name.fileprovider", file)
-    target.setDataAndType(uri, "application/pdf")
-    target.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
-    val intent = Intent.createChooser(target, "Open File")
-    try {
-        context.startActivity(intent)
-    } catch (var6: ActivityNotFoundException) {
-        var6.printStackTrace()
-    }
-}
+
+
+            private fun fileChooser(context: Context, path: String) {
+                val file = File(path)
+                val target = Intent("android.intent.action.VIEW")
+                val uri = FileProvider.getUriForFile(context, "com.package.name.fileprovider", file)
+                target.setDataAndType(uri, "application/pdf")
+                target.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+                val intent = Intent.createChooser(target, "Open File")
+             try {
+                   context.startActivity(intent)
+                } catch (var6: ActivityNotFoundException) {
+                 var6.printStackTrace()
+             }
+            }
 
 
 
