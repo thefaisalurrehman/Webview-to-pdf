@@ -11,7 +11,7 @@ Add the following to your project level build.gradle:
 
 Add this to your app build.gradle:
 
-        implementation 'com.github.thefaisalurrehman:Webview-to-pdf:Tag'
+        implementation 'com.github.thefaisalurrehman:Webview-to-pdf:1.0.1'
 
 Permission in Manifest
 
